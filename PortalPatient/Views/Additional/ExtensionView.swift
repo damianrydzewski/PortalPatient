@@ -29,3 +29,11 @@ extension View {
             .cornerRadius(10)
     }
 }
+
+
+@available(iOS 14.0, *)
+extension EnvironmentValues {
+    var dismiss: () -> Void {
+        { presentationMode.wrappedValue.dismiss() }
+    }
+}
