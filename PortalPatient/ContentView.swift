@@ -2,20 +2,21 @@
 //  ContentView.swift
 //  PortalPatient
 //
-//  Created by Damian on 16/12/2022.
+//  Created by Damian on 15/12/2022.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("log_status") private var logStatus: Bool = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        //MARK: Redirecting User based on UserDefaults
+        if logStatus {
+            DashboardView()
+        } else {
+            LoginView()
         }
-        .padding()
     }
 }
 
@@ -24,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
