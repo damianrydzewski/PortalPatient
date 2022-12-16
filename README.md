@@ -1,7 +1,8 @@
 # PortalPatient
 Firebase, SwiftUI, MVVM, Swift Concurrency Async/Await, Swift Package Manager
 
-PortalPatient is in development. MVVM will be included as soon as possible.
+PortalPatient is in development.
+
 Working funcionality: 
 -> Creating user account by Firebase
 -> Login in by Firebase
