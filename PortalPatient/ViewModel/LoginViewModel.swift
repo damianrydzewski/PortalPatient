@@ -31,6 +31,10 @@ final class LoginViewModel: ObservableObject {
         service = FirebaseService()
     }
     
+    deinit{
+        print("Login View Model has been destroyed")
+    }
+    
     func resetPassword() {
         isLoading = true
         Task {
@@ -58,14 +62,14 @@ final class LoginViewModel: ObservableObject {
     
     //MARK: If User has been found, fetch data from Firestore
     func fetchUser() async throws {
-        let (userID, user) = try await service.fechUserCall()
+        guard let user = try await service.fechUserCall() else {return}
 
         //MARK: Updating UI on Main Thread
         await MainActor.run(body: {
             //Settings UserDefaults data and changing App's Auth Status
-            Settings.shared.userUIDStored = userID ?? ""
-            Settings.shared.userNameStored = user?.username ?? ""
-            Settings.shared.userLastNameStored = user?.lastName ?? ""
+            Settings.shared.userUIDStored = user.id ?? ""
+            Settings.shared.userNameStored = user.username
+            Settings.shared.userLastNameStored = user.lastName
             Settings.shared.logStatus = true
         })
     }

@@ -23,6 +23,7 @@ struct DashboardView: View {
                         Text("My Profile")
                     }
             }
+            .accentColor(.black)
         }
     }
 }
