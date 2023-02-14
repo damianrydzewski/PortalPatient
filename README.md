@@ -4,10 +4,10 @@ Firebase, SwiftUI, MVVM, Swift Concurrency Async/Await, Swift Package Manager
 PortalPatient is in development.
 
 Working funcionality: 
--> Creating user account by Firebase
--> Login in by Firebase
--> Main Dashboard
--> displaing Profile View: -> delete and logout user
+1. Creating user account by Firebase
+2. Login in by Firebase
+3. Main Dashboard
+4. displaing Profile View: -> delete and logout user
 
 <p float='left'>
 <img width="250" alt="208000056-925a323f-5788-4b33-b783-b6f6ff0fb763" src="https://user-images.githubusercontent.com/107407005/208004077-7b624500-e219-4074-b952-f2924a0d8490.png">
